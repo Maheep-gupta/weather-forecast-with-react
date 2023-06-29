@@ -10,11 +10,14 @@ function App() {
   const [weatherData, setweatherData] = useState(null)
   useEffect(() => {
     fetch(
-      'https://api.weatherapi.com/v1/forecast.json?key=cf331fa56fde4a64b98185925232706&q=India&days=1&aqi=no&alerts=no').then(response => response.json()).then((weatherJsonData) => 
+      `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=India&days=1&aqi=no&alerts=no`).then(response => response.json()).then((weatherJsonData) => 
         setweatherData(weatherJsonData)
         
    )
   }, [])
+  console.log(weatherData)
+  console.log(process.env.API_KEY)
+
   
    
   return (
