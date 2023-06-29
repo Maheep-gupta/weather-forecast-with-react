@@ -88,7 +88,13 @@ body{
 .box-hour-weather{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
+}
+
+.loc{
+  color: #FFF;
+  font-size: 18px;
 }
 
 .main-hour-weather {
@@ -124,4 +130,33 @@ body{
   justify-content: center;
   align-items: center;
   font-size: 21px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .card{
+    width: 300px;
+  }
+  .location{
+    font-size: 20px;
+  }
+  .location img{
+    height: 25px;
+  }
+  .date{
+    font-size: 15px;
+  }
+  .title,.value{
+    font-size: 10px;
+  }
+  .temp{
+    font-size: 40px;
+  }
+  .loc{
+    font-size: 10px;
+  }
+  .tempDiv img{
+    height: 40px;
+  }
+
 }

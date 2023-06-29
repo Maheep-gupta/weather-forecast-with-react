@@ -19,15 +19,21 @@ const WeatherCard = (props) => {
                     <br />
                     Time:-
                     {(props.forecastCurrent.last_updated).slice(10)}
-                    
+
                 </div>
             </div>
 
             <div className='lowerdiv'>
                 <div className='tempDiv'>
-                    <img src={tempIcon} alt='temperature Icon'/>
+                    <img src={tempIcon} alt='temperature Icon' />
                     <span className='temp'>{props.forecastCurrent.temp_c}</span>
-                    <img src={props.forecastCurrent.condition.icon} alt='weather Condition'  />
+                    <img src={props.forecastCurrent.condition.icon} alt='weather Condition' />
+
+                    <div className='loc'>
+                        lat:-{props.location.lat}<br />
+                        lon:-{props.location.lon}
+
+                    </div>
                 </div>
             </div>
             <div className='cardBottom'>
