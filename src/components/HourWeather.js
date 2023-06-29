@@ -1,5 +1,4 @@
 import React from 'react';
-import tempoImg from './icon _temperature_.png';
 
 const HourWeather = (props) => {
   console.log(props)
@@ -10,7 +9,7 @@ const HourWeather = (props) => {
         <div className='hour-time'>{(props.hourWeather.time).slice(10)} </div>
 
         {/* img */}
-        <img className='hour-temp-img' height="40px" src={props.hourWeather.condition.icon} />
+        <img className='hour-temp-img' height="40px" src={props.hourWeather.condition.icon} alt='weather condition' />
 
       </div>
       <div className='tempShow'>

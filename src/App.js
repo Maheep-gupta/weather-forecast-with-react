@@ -27,11 +27,9 @@ function App() {
         <WeatherCard location={weatherData['location']} forecastCurrent={weatherData['current']} />
         <div className='box-hour-weather'>
           {weatherData['forecast'].forecastday[0].hour.map((hour, index) => {
-            if (index % 3 === 0) {
-              return (
-                <HourWeather key={hour.time_epoch} hourWeather={hour} />
-              )
-            }
+            return (
+              index % 3 === 0? <HourWeather key={hour.time_epoch} hourWeather={hour} />:null
+            )
 
           })}
         </div>

@@ -11,7 +11,7 @@ const WeatherCard = (props) => {
             <div className='upperDiv'>
                 <div className='location'>
                     {props.location.name}
-                    <img src={locationIcon} />
+                    <img src={locationIcon} alt='location' />
                 </div>
                 <div className='date'>
                     Date:-
@@ -25,9 +25,9 @@ const WeatherCard = (props) => {
 
             <div className='lowerdiv'>
                 <div className='tempDiv'>
-                    <img src={tempIcon} />
+                    <img src={tempIcon} alt='temperature Icon'/>
                     <span className='temp'>{props.forecastCurrent.temp_c}</span>
-                    <img src={props.forecastCurrent.condition.icon} />
+                    <img src={props.forecastCurrent.condition.icon} alt='weather Condition'  />
                 </div>
             </div>
             <div className='cardBottom'>
