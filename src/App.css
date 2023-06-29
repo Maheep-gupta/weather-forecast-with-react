@@ -1,38 +1,127 @@
+body{
+  background: #252323;
+
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: 2rem;
+  color: #FFF;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.card {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: fit-content;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: linear-gradient(147deg, #AD36CB 26.56%, #333 68.75%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(255, 250, 250, 0.25), 0px 4px 4px 0px rgba(253, 245, 245, 0.25);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.location {
+  display: flex;
+  width: 50%;
+  height: 36px;
+  flex-shrink: 0;
+  color: #FFF;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.tempDiv {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+}
+
+.temp {
+  color: #F2F1F1;
+  font-size: 70px;
+  font-weight: 300;
+}
+
+.cardBottom {
+  display: flex;
+  height: 72px;
+  justify-content: space-evenly;
+}
+
+.title,
+.date {
+  color: #FFF;
+  text-align: center;
+
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.value {
+  color: #FFF;
+  font-size: 22px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.upperDiv {
+  display: flex;
+  width: 100%;
+  padding: 35px 0 0 28px;
+
+}
+
+.date {
+  width: 50%;
+  text-transform: none;
+  font-weight: 300;
+}
+.box-hour-weather{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.main-hour-weather {
+  width: 130px;
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: linear-gradient(180deg, #B32DD4 0%, rgba(217, 217, 217, 0.00) 100%);
+}
+
+.hour-weather-value {
+  display: flex;
+  height: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 10px;
+}
+
+.tempShow {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #373333 0%, rgba(55, 51, 51, 0.00) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  
+}
+.hour-temp{
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
 }
