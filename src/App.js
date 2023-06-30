@@ -21,8 +21,8 @@ function App() {
         // setweatherData(null)
 
       )
-      .catch(error =>
-        setweatherData(null)
+        .catch((error) =><div style={{ color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Some Error Occured</div>
+        
       )
 
 

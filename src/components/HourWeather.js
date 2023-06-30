@@ -1,7 +1,6 @@
 import React from 'react';
 
 const HourWeather = (props) => {
-  console.log(props)
   return (
     <div className='main-hour-weather'>
       <div className='hour-weather-value'>
