@@ -11,27 +11,28 @@ import Navbar from './components/Navbar';
 function App() {
   const [weatherData, setweatherData] = useState(null)
   const [location, setLocation] = useState('')
+  const [error, setError] = useState('200')
   const handleSubmit = (event) => {
     event.preventDefault();
-    location===''?setweatherData(null):
-    fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${location}&days=1&aqi=no&alerts=no`)
-      .then(response => response.json()).then((weatherJsonData) =>
-        setweatherData(weatherJsonData)
-        // setweatherData(null)
-
-      )
-        .catch((error) =><div style={{ color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Some Error Occured</div>
+    location === '' ? setweatherData(null) :
+      fetch(
+        `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${location}&days=1&aqi=no&alerts=no`)
+        .then(
+          (response) => {
+            if (response.ok) {
+              return response.json()
+            }
+            return Promise.reject(response)
+          }
+          )
+        .then(weatherJsonData => setweatherData(weatherJsonData))
+    .catch((loggedError) => {
+      setError(loggedError)
+      }
         
       )
 
-
   }
-
-
-
-
-
 
   return (
     <>
@@ -57,7 +58,8 @@ function App() {
 
               })}
             </div>
-          </div> : <div style={{ color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>No location Selected</div>}
+          </div> : error.status===400?<div style={{ color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Some Error Occured</div>
+      : <div style={{ color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>No location Selected</div>}
 
     </>
   )
